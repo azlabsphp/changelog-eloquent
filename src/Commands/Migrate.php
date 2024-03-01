@@ -33,7 +33,7 @@ class Migrate extends Command
         $dbManager->setAsGlobal();
 
         if ($this->option('refresh')) {
-            Manager::schema()->dropIfExists('logs_table_attributes');
+            Manager::schema()->dropIfExists('logs_table_properties');
             Manager::schema()->dropIfExists('logs_tables');
         }
 
@@ -42,8 +42,8 @@ class Migrate extends Command
             return Command::FAILURE;
         }
 
-        if (Manager::schema()->hasTable('logs_table_attributes')) {
-            $this->error('Migration error, table logs_table_attributes exists in database');
+        if (Manager::schema()->hasTable('logs_table_properties')) {
+            $this->error('Migration error, table logs_table_properties exists in database');
             return Command::FAILURE;
         }
 
