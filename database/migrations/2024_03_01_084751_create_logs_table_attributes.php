@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('instance_id', 45)->index();
             $table->string('property', 145)->index();
             $table->text('previous_value')->nullable();
-            $table->text('current_value');
-            $table->string('log_by', 145)->index();
+            $table->text('current_value')->nullable();
+            $table->string('log_by', 145)->nullable()->index();
             $table->dateTime('log_at')->nullable();
             $table->text('notes')->nullable();
             $table->foreign('table_id')->references('id')->on('logs_tables')->onDelete('cascade');
