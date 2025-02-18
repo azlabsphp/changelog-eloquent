@@ -15,21 +15,17 @@ class LogDriver implements AbstractLogDriver
 
     public function logChange(string $table, string $instance, string $property, $previous, $actual, ?string $logBy = null)
     {
-        /**
-         * @var LogTable
-         */
+        /** @var LogTable */
         $logTable = LogTable::query()->where('name', "$table")->first();
         if (is_null($logTable)) {
-            /**
-             * @var LogTable
-             */
+            /** @var LogTable */
             $logTable = LogTable::create(['name' => $table]);
         }
 
         // We enclose implementation that retrieve authenticated user
         // id in a try...catch block in case the call throws an exception
         try {
-            $logBy = \Illuminate\Support\Facades\Auth::id(); // TODO: Find out if it's possible to use auth user email
+            $logBy = \Illuminate\Support\Facades\Auth::id();
         } catch (\Throwable $e) {
             $logBy = null;
         }

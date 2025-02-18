@@ -1,6 +1,6 @@
 {
     "name": "drewlabs/changelog-eloquent",
-    "description": "Eloquent driver for drewlabs/changelog library",
+    "description": "eloquent driver for drewlabs/changelog library",
     "type": "library",
     "require": {
         "drewlabs/changelog": "^0.1.0",
