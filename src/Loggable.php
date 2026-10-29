@@ -5,7 +5,7 @@ namespace Drewlabs\Changelog\Eloquent;
 use Drewlabs\Changelog\Logger;
 use Illuminate\Database\Eloquent\Model;
 use Drewlabs\Changelog\Loggable as AbstractLoggable;
-use Drewlabs\Core\Helpers\Arr;
+use Illuminate\Support\Arr;
 
 /**
  * @mixin Model

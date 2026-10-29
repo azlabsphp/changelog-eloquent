@@ -15,16 +15,10 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/../database/migrations' => $this->app->basePath('database/migrations'),
-        ], 'changelogs-migrations');
+        $this->publishes([ __DIR__ . '/../database/migrations' => $this->app->basePath('database/migrations') ], 'changelogs-migrations');
 
-        // Register library commands
-        $this->commands([
-            \Drewlabs\Changelog\Eloquent\Commands\Migrate::class
-        ]);
+        $this->commands([ \Drewlabs\Changelog\Eloquent\Commands\Migrate::class ]);
 
-        // Register eloquent log driver
         Logger::getInstance()->registerDriver(new LogDriver, 'eloquent');
     }
 

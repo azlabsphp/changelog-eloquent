@@ -4,11 +4,11 @@
     "type": "library",
     "require": {
         "drewlabs/changelog": "^0.1.0",
-        "illuminate/console": "^9.0|^10.0|^11.0",
-        "illuminate/database": "^9.0|^10.0|^11.0"
+        "illuminate/console": "*",
+        "illuminate/database": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.0|^11.0"
+        "phpunit/phpunit": ">=10.0"
     },
     "license": "MIT",
     "autoload": {
